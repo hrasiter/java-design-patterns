@@ -1,8 +1,6 @@
 package decoratorpattern;
 
 public class Mocha extends CondimentDecorator {
-
-	Beverage beverage;
 	
 	public Mocha(Beverage beverage) {
 		this.beverage = beverage;
@@ -15,8 +13,18 @@ public class Mocha extends CondimentDecorator {
 
 	@Override
 	public double cost() {
-		// TODO Auto-generated method stub
-		return beverage.cost() + .20;
+		double cost =  beverage.cost();
+		
+		if(beverage.getSize() == Size.SHORT)
+			cost += .05;
+		else if (beverage.getSize() == Size.TALL)
+			cost += .10;
+		else if (beverage.getSize() == Size.GRANDE)
+			cost += .15;
+		else if (beverage.getSize() == Size.VENTI)
+			cost += .20;
+				
+		return cost;
 	}
 
 }

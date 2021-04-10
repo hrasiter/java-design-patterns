@@ -2,8 +2,6 @@ package decoratorpattern;
 
 public class Whip extends CondimentDecorator {
 
-	Beverage beverage;
-	
 	public Whip(Beverage beverage) {
 		this.beverage = beverage;
 	}
@@ -15,8 +13,18 @@ public class Whip extends CondimentDecorator {
 
 	@Override
 	public double cost() {
-		// TODO Auto-generated method stub
-		return beverage.cost() + 0.10;
+		double cost =  beverage.cost();
+		
+		if(beverage.getSize() == Size.SHORT)
+			cost += .10;
+		else if (beverage.getSize() == Size.TALL)
+			cost += .15;
+		else if (beverage.getSize() == Size.GRANDE)
+			cost += .20;
+		else if (beverage.getSize() == Size.VENTI)
+			cost += .25;
+		
+		return cost;
 	}
 
 }
