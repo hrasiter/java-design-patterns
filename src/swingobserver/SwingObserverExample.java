@@ -21,6 +21,9 @@ public class SwingObserverExample {
 		
 		frame = new JFrame();
 		JButton button = new JButton("Should I do it?");
+		button.addActionListener(event -> {
+			System.out.println("I am the lambda expression for action listener!");
+		});
 		button.addActionListener(new AngleListener());
 		frame.setSize(200, 100);
 		frame.add(button);
