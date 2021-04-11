@@ -6,12 +6,12 @@ public class FactoryPatternTest {
 		PizzaStore nyPizzaStore = new NYStylePizzaStore();
 		Pizza pizza = nyPizzaStore.orderPizza("cheese");
 		
-		System.out.println("First order: " + pizza.getName() + "\n");
+		System.out.println("First order: " + pizza + "\n");
 		
 		PizzaStore chicagoPizzaStore = new ChicagoStylePizzaStore();
 		pizza = chicagoPizzaStore.orderPizza("veggie");
 		
-		System.out.println("Secod order: " + pizza.getName() + "\n");
+		System.out.println("Secod order: " + pizza + "\n");
 	}
 
 }

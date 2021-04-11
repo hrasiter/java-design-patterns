@@ -3,6 +3,7 @@ package factorypattern;
 import java.util.ArrayList;
 
 public abstract class Pizza {
+	PizzaIngredientFactory ingredientFactory;
 	
 	String name;
 	
@@ -31,7 +32,7 @@ public abstract class Pizza {
 	}
 	
 	public String toString() {
-		return  getName() + " Pizza";
+		return  getName() + " with " + dough + ", "+ cheese + ", " + sauce;
 	}
 
 	public void setName(String name) {
