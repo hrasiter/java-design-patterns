@@ -1,6 +1,8 @@
 package iterator;
 
-public class DinnerMenu {
+import java.util.Iterator;
+
+public class DinnerMenu implements Menu {
 	
 	static final int MAX_MENU_ITEMS = 6;
 	int numberOfItems = 0;
@@ -26,7 +28,7 @@ public class DinnerMenu {
 		}	
 	}
 
-	Iterator createIterator() {
+	public Iterator<MenuItem> createIterator() {
 		return new DinnerMenuIterator(menuItems);
 	}
 	
