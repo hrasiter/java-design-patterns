@@ -1,12 +1,17 @@
 package iterator;
 
+import java.util.ArrayList;
+
 public class IteratorTest {
 	public static void main(String[] args) {
-		PancakeHouseMenu pancakeHouseMenu = new PancakeHouseMenu();
-		DinnerMenu dinnerMenu = new DinnerMenu();
-		CafeMenu cafeMenu = new CafeMenu();
+	
+		ArrayList<Menu> menus = new ArrayList<Menu>();
 		
-		Waitress waitress = new Waitress(pancakeHouseMenu, dinnerMenu, cafeMenu);
+		menus.add(new PancakeHouseMenu());
+		menus.add(new DinnerMenu());
+		menus.add(new CafeMenu());
+		
+		Waitress waitress = new Waitress(menus);
 		
 		waitress.printMenu();
 	}
