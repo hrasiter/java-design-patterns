@@ -22,4 +22,9 @@ public class DuckFactory extends AbstrackDuckFactory {
 		return new RubberDuck();
 	}
 
+	@Override
+	public Quackable createGooseAdapter() {
+		return new GooseAdapter(new Goose());
+	}
+
 }

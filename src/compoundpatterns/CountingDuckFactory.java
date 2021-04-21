@@ -22,4 +22,9 @@ public class CountingDuckFactory extends AbstrackDuckFactory {
 		return new QuackCounter(new RubberDuck());
 	}
 
+	@Override
+	public Quackable createGooseAdapter() {
+		return new QuackCounter(new GooseAdapter(new Goose()));
+	}
+
 }
